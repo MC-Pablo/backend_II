@@ -1,0 +1,42 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/css/login.css">
+    <title>Pagina de Logeo</title>
+  </head>
+  <body>
+
+    <section>
+      <ul>
+        <li><a href="/auth/logout">Cerrar Sesión</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <form
+        action="/auth/login"
+        method="POST"
+        style="display:flex; flex-direction: column; gap: 0.25rem;"
+      >
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <div>
+          <label for="password">Contraseña</label>
+          <input type="password" name="password" id="password" />
+        </div>
+
+        <div style="margin-top: 1rem;">
+          <input type="submit" value="Aceptar" />
+        </div>
+      </form>
+
+      {{#if errorMessage}}
+        <p style="color: red;">{{errorMessage}}</p>
+      {{/if}}
+    </section>
+
+  </body>
+</html>
